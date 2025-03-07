@@ -26,7 +26,7 @@ function AdminPanel({ adminId }) {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/users/search`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/search`);
       setUsers(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       console.error('Fetch users error:', error);
@@ -36,7 +36,7 @@ function AdminPanel({ adminId }) {
 
   const fetchAdminData = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/admin/${adminId}`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/${adminId}`);
       setAdminData({ username: response.data.username, password: '' });
     } catch (error) {
       console.error('Fetch admin data error:', error);
@@ -57,10 +57,10 @@ function AdminPanel({ adminId }) {
     e.preventDefault();
     try {
       if (editId) {
-        await axios.put(`${import.meta.env.VITE_API_URL}/users/${editId}`, { ...formData, adminId });
+        await axios.put(`${import.meta.env.VITE_API_URL}/api/users/${editId}`, { ...formData, adminId });
         setEditId(null);
       } else {
-        await axios.post(`${import.meta.env.VITE_API_URL}/users`, { ...formData, adminId });
+        await axios.post(`${import.meta.env.VITE_API_URL}/api/users`, { ...formData, adminId });
       }
       fetchUsers();
       resetForm();
@@ -71,7 +71,7 @@ function AdminPanel({ adminId }) {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/users/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/users/${id}`, {
         data: { adminId, reason: formData.reason },
       });
       fetchUsers();
@@ -117,7 +117,7 @@ function AdminPanel({ adminId }) {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/users/search`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/search`, {
         params: { passport_id: searchQuery },
       });
       setSearchResults(response.data);

@@ -16,7 +16,7 @@ function SearchBlock() {
 
   const fetchNews = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/news`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/news`);
       setNewsList(response.data);
     } catch (error) {
       console.error('Fetch news error:', error);
@@ -25,7 +25,7 @@ function SearchBlock() {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/users/search`, {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/search`, {
         params: { name: searchQuery },
       });
       setUsers(response.data);

@@ -15,7 +15,7 @@ function News({ adminId }) {
 
   const fetchNews = async () => {
     try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/news`);
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/news`);
       setNewsList(response.data);
     } catch (error) {
       console.error('Fetch news error:', error);
@@ -30,7 +30,7 @@ function News({ adminId }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/news`, { ...newsData, adminId });
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/news`, { ...newsData, adminId });
       fetchNews();
       setNewsData({ title: '', content: '', image_url: '', video_url: '' });
     } catch (error) {
@@ -40,7 +40,7 @@ function News({ adminId }) {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/news/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/news/${id}`);
       fetchNews();
     } catch (error) {
       console.error('Delete news error:', error);
@@ -65,7 +65,7 @@ function News({ adminId }) {
   const handleEditSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`${import.meta.env.VITE_API_URL}/news/${editingNewsId}`, editData);
+      await axios.put(`${import.meta.env.VITE_API_URL}/api/news/${editingNewsId}`, editData);
       fetchNews();
       setEditingNewsId(null); // Tahrirlashni yakunlash
       setEditData({ title: '', content: '', image_url: '', video_url: '' });
@@ -171,7 +171,7 @@ function News({ adminId }) {
               <>
                 <h4>{news.title}</h4>
                 <p>{news.content}</p>
-                {news.image_url && <img src={news.image_url} alt={news.title} className="news-image" />}
+                {news.image_url && <img src={news.image_url} alt={news.title} className="/api/news-image" />}
                 {news.video_url && (
                   <video controls className="news-video">
                     <source src={news.video_url} type="video/mp4" />
