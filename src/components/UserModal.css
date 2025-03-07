@@ -1,0 +1,154 @@
+.modal-container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-wrapper {
+  position: relative;
+  z-index: 1001;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.modal-content {
+  width: 100%;
+}
+
+.modal-panel {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  max-height: 80vh;
+  overflow-y: auto;
+  transition: background 0.5s ease;
+}
+
+.dark-mode .modal-panel {
+  background: rgba(52, 73, 94, 0.95);
+}
+
+.modal-panel h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.light-mode .modal-panel h3 {
+  color: #333;
+}
+
+.dark-mode .modal-panel h3 {
+  color: #fff;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+}
+
+.modal-body p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.light-mode .modal-body p {
+  color: #333;
+}
+
+.dark-mode .modal-body p {
+  color: #ccc;
+}
+
+.status-clean {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.status-wanted {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.modal-close-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #dc3545, #c82333);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .modal-content-wrapper {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .modal-panel {
+    max-height: 70vh;
+  }
+
+  .user-image {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content-wrapper {
+    padding: 10px;
+  }
+
+  .modal-panel {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .modal-panel h3 {
+    font-size: 18px;
+  }
+
+  .modal-body p {
+    font-size: 12px;
+  }
+
+  .user-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .modal-close-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,270 @@
+/* Google Fonts qo‘shilgan: index.html da
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+*/
+
+.search-page {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(135deg, #f0f2f5, #e0e4e8);
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.5s ease;
+}
+
+.dark-mode.search-page {
+  background: linear-gradient(135deg, #1a252f, #2c3e50);
+}
+
+/* Search Block (Avvalgi Holat) */
+.search-block {
+  width: 50%; /* Ekran yarmisi */
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.theme-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-btn:hover {
+  transform: scale(1.2);
+}
+
+.search-block h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.dark-mode .search-block h2 {
+  color: #fff;
+}
+
+.search-form {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .search-form {
+  background: rgba(52, 73, 94, 0.9);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.search-input {
+  width: 100%;
+  padding: 15px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.7);
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .search-input {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.dark-mode .search-input::placeholder {
+  color: #aaa;
+}
+
+.search-input:focus {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+.dark-mode .search-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+}
+
+.user-list {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dark-mode .user-item {
+  background: rgba(52, 73, 94, 0.9);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.user-item:hover {
+  transform: translateY(-3px);
+  background: rgba(74, 144, 226, 0.1);
+}
+
+.dark-mode .user-item:hover {
+  background: rgba(74, 144, 226, 0.2);
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.dark-mode .user-name {
+  color: #fff;
+}
+
+.user-passport {
+  font-size: 14px;
+  color: #666;
+}
+
+.dark-mode .user-passport {
+  color: #ccc;
+}
+
+/* Yangiliklar Bloki */
+.news-block {
+  width: 50%; /* Ekran yarmisi */
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1); /* Engil shaffof fon */
+}
+
+.dark-mode .news-block {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.news-block h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.dark-mode .news-block h2 {
+  color: #fff;
+}
+
+.news-content {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .news-content {
+  background: rgba(52, 73, 94, 0.9);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.news-content p {
+  font-size: 16px;
+  color: #333;
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.dark-mode .news-content p {
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .search-page {
+    flex-direction: column;
+  }
+
+  .search-block,
+  .news-block {
+    width: 100%;
+    padding: 20px 15px;
+  }
+
+  .search-form,
+  .news-content {
+    max-width: 90%;
+  }
+
+  .user-list {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-block h2,
+  .news-block h2 {
+    font-size: 24px;
+  }
+
+  .search-input {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .user-name,
+  .news-content p {
+    font-size: 14px;
+  }
+
+  .user-passport {
+    font-size: 12px;
+  }
+}
+
+
+.news-item {
+  margin-bottom: 20px;
+}
+
+.news-item h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.dark-mode .news-item h3 {
+  color: #fff;
+}
+
+.news-image,
+.news-video {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
