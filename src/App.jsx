@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import SearchBlock from './components/SearchBlock';
 import AdminPanel from './components/admin/AdminPanel';
 import News from './components/admin/News';
+import Login from './components/admin/Login';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SearchBlock />} />
         <Route path="/admin" element={<AdminPanel adminId={1} />} />
+        <Route path="/login" element={<Login setAdminId={setAdminId} />} />
         <Route path="/admin/news" element={<News adminId={1} />} />
       </Routes>
       {/* Footer qismi */}
