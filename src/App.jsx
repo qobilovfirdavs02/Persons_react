@@ -20,7 +20,7 @@ function App() {
           {isDarkMode ? '🌙' : '☀️'}
         </button>
       </div>
-      <h1 className="app-title">UserSearch</h1>
+      <h1 className="app-title">Odamlarni izlash</h1>
       <Routes>
         <Route path="/" element={<SearchBlock />} />
         <Route path="/admin" element={<AdminPanel adminId={1} />} />
