@@ -184,13 +184,13 @@
 }
 
 .light-mode .user-table th {
-  background: #f8f9fa;
-  color: #2c2c2c;
+  background: #ffffff;
+  color: #333;
 }
 
 .dark-mode .user-table th {
-  background: #3b4b5e;
-  color: #ccc;
+  background: #2c3e50;
+  color: #fff;
 }
 
 .user-table td {
@@ -557,7 +557,7 @@
 }
 
 .light-mode .result-log p {
-  color: #666;
+  color: #323232;
 }
 
 .dark-mode .result-log p {
@@ -571,7 +571,7 @@
 }
 
 .light-mode .no-results {
-  color: #666;
+  color: #2c2c2c;
 }
 
 .dark-mode .no-results {
