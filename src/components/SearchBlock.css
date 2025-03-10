@@ -6,6 +6,7 @@
   min-height: 100vh;
   width: 100vw;
   display: flex;
+  margin-bottom: 20px;
   flex-direction: row;
   background: linear-gradient(135deg, #f0f2f5, #e0e4e8);
   font-family: 'Poppins', sans-serif;
@@ -14,17 +15,37 @@
 
 .dark-mode.search-page {
   background: linear-gradient(135deg, #1a252f, #2c3e50);
+  border-radius: 7px;
 }
 
-/* Search Block (Avvalgi Holat) */
-.search-block {
-  width: 50%; /* Ekran yarmisi */
+/* Mobil uchun ustunli joylashuv */
+@media (max-width: 768px) {
+  .search-page {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Search Block */
+.search-block,
+.news-block {
+  width: 90%;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+@media (max-width: 768px) {
+  .search-block,
+  .news-block {
+    width: 88%;
+    padding: 20px 15px;
+  }
+}
+
+/* Dark mode uchun */
 .theme-btn {
   position: absolute;
   top: 20px;
@@ -41,14 +62,16 @@
   transform: scale(1.2);
 }
 
-.search-block h2 {
+.search-block h2,
+.news-block h2 {
   font-size: 28px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #333;
   text-align: center;
 }
 
-.dark-mode .search-block h2 {
+.dark-mode .search-block h2,
+.dark-mode .news-block h2 {
   color: #fff;
 }
 
@@ -67,8 +90,16 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Mobil ekranda formaning kengligini oshirish */
+@media (max-width: 768px) {
+  .search-form {
+    max-width: 90%;
+    width: 90%;
+  }
+}
+
 .search-input {
-  width: 100%;
+  width: 88%;
   padding: 15px 25px;
   font-size: 18px;
   border: none;
@@ -82,7 +113,9 @@
 .dark-mode .search-input {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
+  width: 90%;
 }
+
 
 .search-input::placeholder {
   color: #999;
@@ -92,16 +125,14 @@
   color: #aaa;
 }
 
-.search-input:focus {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+/* Mobil ekranda input kengligini to‘liq qilish */
+@media (max-width: 768px) {
+  .search-input {
+    width: 90%;
+  }
 }
 
-.dark-mode .search-input:focus {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
-}
-
+/* User list */
 .user-list {
   width: 100%;
   max-width: 600px;
@@ -125,7 +156,6 @@
 
 .dark-mode .user-item {
   background: rgba(52, 73, 94, 0.9);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .user-item:hover {
@@ -156,29 +186,17 @@
   color: #ccc;
 }
 
-/* Yangiliklar Bloki */
+/* News block */
 .news-block {
-  width: 50%; /* Ekran yarmisi */
+  width: 90%;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1); /* Engil shaffof fon */
 }
 
 .dark-mode .news-block {
   background: rgba(0, 0, 0, 0.1);
-}
-
-.news-block h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: #333;
-  text-align: center;
-}
-
-.dark-mode .news-block h2 {
-  color: #fff;
 }
 
 .news-content {
@@ -206,27 +224,15 @@
   color: #ccc;
 }
 
+/* Mobil ekranda elementlar to‘liq kenglikda */
 @media (max-width: 768px) {
-  .search-page {
-    flex-direction: column;
-  }
-
-  .search-block,
-  .news-block {
-    width: 100%;
-    padding: 20px 15px;
-  }
-
-  .search-form,
   .news-content {
-    max-width: 90%;
-  }
-
-  .user-list {
-    max-width: 90%;
+    max-width: 100%;
+    width: 100%;
   }
 }
 
+/* Mobil ekran uchun o‘lchamlarni optimallashtirish */
 @media (max-width: 480px) {
   .search-block h2,
   .news-block h2 {
@@ -248,7 +254,7 @@
   }
 }
 
-
+/* Yangiliklar uchun */
 .news-item {
   margin-bottom: 20px;
 }

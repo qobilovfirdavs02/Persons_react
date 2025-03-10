@@ -1,13 +1,15 @@
+/* ✅ Login sahifasi umumiy stil */
 .login-container {
   height: 100vh;
-  display: inline-flex;
-  width: 180vh;
+  width: 100vw;
+  display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #667eea, #764ba2);
-  padding: 10px;
+  padding: 20px;
 }
 
+/* ✅ Login form */
 .login-form {
   background: rgba(170, 217, 231, 0.95);
   padding: 30px;
@@ -18,6 +20,14 @@
   animation: fadeIn 0.5s ease;
 }
 
+/* ✅ Katta ekranlarda ortiqcha kenglik bo‘lmasligi uchun */
+@media (min-width: 1200px) {
+  .login-container {
+    max-width: 90%;
+  }
+}
+
+/* ✅ Login sarlavhasi */
 .login-title {
   font-size: clamp(20px, 5vw, 28px);
   color: #333;
@@ -27,13 +37,14 @@
   letter-spacing: 1px;
 }
 
+/* ✅ Input maydonlari */
 .input-group {
   position: relative;
   margin-bottom: 20px;
 }
 
 .login-input {
-  width: 85%;
+  width: 91%;
   padding: 12px 40px 12px 15px;
   font-size: 14px;
   border: none;
@@ -49,6 +60,7 @@
   background: #fff;
 }
 
+/* ✅ Input icon */
 .input-icon {
   position: absolute;
   top: 50%;
@@ -58,6 +70,7 @@
   color: #666;
 }
 
+/* ✅ Parol ko‘rsatish tugmasi */
 .show-password-btn {
   position: absolute;
   top: 50%;
@@ -75,6 +88,7 @@
   color: #333;
 }
 
+/* ✅ Xato xabari */
 .login-error {
   color: #ff4d4d;
   text-align: center;
@@ -82,6 +96,7 @@
   font-size: 12px;
 }
 
+/* ✅ Login tugmasi */
 .login-btn {
   width: 100%;
   padding: 12px;
@@ -99,6 +114,7 @@
   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
+/* ✅ Animatsiya */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -110,9 +126,43 @@
   }
 }
 
+/* ✅ Planshet (768px dan kichik) */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+  }
+
+  .login-form {
+    max-width: 90%;
+    padding: 25px;
+  }
+
+  .login-title {
+    font-size: 22px;
+  }
+
+  .login-input {
+    font-size: 16px;
+  }
+}
+
+/* ✅ Mobil (480px dan kichik) */
 @media (max-width: 480px) {
   .login-form {
+    max-width: 90%;
     padding: 20px;
-    max-width: 100%;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  .login-input {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+
+  .login-btn {
+    font-size: 14px;
   }
 }

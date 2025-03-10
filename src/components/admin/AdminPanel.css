@@ -172,7 +172,7 @@
 }
 
 .user-table {
-  width: 100%;
+  width: 95%;
   border-collapse: collapse;
   min-width: 600px;
 }
@@ -185,7 +185,7 @@
 
 .light-mode .user-table th {
   background: #f8f9fa;
-  color: #555;
+  color: #2c2c2c;
 }
 
 .dark-mode .user-table th {
@@ -257,7 +257,7 @@
 }
 
 .light-mode .no-users {
-  color: #666;
+  color: #3a3a3a;
 }
 
 .dark-mode .no-users {
@@ -314,7 +314,7 @@
 }
 
 .admin-input {
-  width: 100%;
+  width: 95%;
   padding: 12px 40px 12px 15px;
   font-size: 14px;
   border: none;
@@ -441,7 +441,7 @@
   border-radius: 8px;
   background: #f0f2f5;
   color: #333;
-  width: 100%;
+  width: 90%;
   max-width: 300px;
   outline: none;
 }
