@@ -183,6 +183,13 @@
   text-align: left;
 }
 
+.light-mode .user-table td {
+  background: #ffffff; /* Sof oq emas, biroz kulrang qilsa ham bo‘ladi */
+  color: #333; /* Matnni qoraytirish */
+  border-bottom: 1px solid #ddd; /* Chiziqlar yaxshi ko‘rinishi uchun */
+}
+
+
 .light-mode .user-table th {
   background: #ffffff;
   color: #333;
